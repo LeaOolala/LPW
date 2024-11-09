@@ -32,7 +32,7 @@ solde = solde + (solde * tauxInteret);
 //Utilisez console.log() pour afficher le message : “Intérêts annuels de 3% ajoutés.
 // Nouveau solde : X euros.”
 console.log("Intérêts annuels de 3% ajoutés. Nouveau solde : " + solde + " euros");
-historiqueOperations.push("Ajout des taux d'intéret de 3%");
+historiqueOperations.push("Ajout des taux d'intérêt de 3%");
 
 // Créez une nouvelle variable appelée nouveauDepot avec une valeur de 500.
 let nouveauDepot = 500;
@@ -56,7 +56,7 @@ if (solde >= nouveauRetrait){
     // Enfin, recalculer les intérêts avec ce nouveau solde et affichez le résultat dans la console.
     solde = solde + (solde * tauxInteret);
     console.log("Intérêts annuels de 3% ajoutés. Nouveau solde : "+ solde +" euros");
-    historiqueOperations.push("Ajout des taux d'intéret de 3%");
+    historiqueOperations.push("Ajout des taux d'intérêt de 3%");
 
     //tableau
     // console.table(historiqueOperations);
