@@ -4,7 +4,7 @@ const  tauxInteret = 0.03;
 let solde = 1000;
 let depot = 200;
 let retrait = 150;
-let historiqueOperations = [];
+const historiqueOperations = [];
 
 solde = depot + solde;
 console.log( "Vous avez déposé 200 euros. Nouveau solde : " + solde + " euros");
