@@ -4,9 +4,11 @@ const  tauxInteret = 0.03;
 let solde = 1000;
 let depot = 200;
 let retrait = 150;
+let historiqueOperations = [];
 
 solde = depot + solde;
 console.log( "Vous avez déposé 200 euros. Nouveau solde : " + solde + " euros");
+historiqueOperations.push("Dépôt de 200 euros");
 
 // Vérifiez si le solde est suffisant pour permettre le retrait.
 if (solde >= retrait){
@@ -15,6 +17,7 @@ if (solde >= retrait){
     //puis affichez : “Vous avez retiré 150 euros. Nouveau solde : X euros.""
     solde = solde-retrait;
     console.log("Vous avez retiré 150 euros. Nouveau solde : " + solde +" euros.")
+    historiqueOperations.push("Retrait de 150 euros");
 }
 
 //Si le solde est insuffisant, affichez un message dans la console : “Solde 
@@ -29,6 +32,7 @@ solde = solde + (solde * tauxInteret);
 //Utilisez console.log() pour afficher le message : “Intérêts annuels de 3% ajoutés.
 // Nouveau solde : X euros.”
 console.log("Intérêts annuels de 3% ajoutés. Nouveau solde : " + solde + " euros");
+historiqueOperations.push("Ajout des taux d'intéret de 3%");
 
 // Créez une nouvelle variable appelée nouveauDepot avec une valeur de 500.
 let nouveauDepot = 500;
@@ -37,6 +41,7 @@ let nouveauDepot = 500;
 // premier dépôt.
 solde = solde + nouveauDepot;
 console.log("Vous avez déposé 500 euros. Nouveau solde : " + solde + " euros");
+historiqueOperations.push("Dépôt de 500 euros");
 
 // Créez une variable appelée nouveauRetrait avec une valeur de 800.
 let nouveauRetrait = 800;
@@ -46,9 +51,14 @@ let nouveauRetrait = 800;
 if (solde >= nouveauRetrait){
     solde = solde - nouveauRetrait;
     console.log("Vous avez retiré 800 euros. Nouveau solde : " + solde +" euros.");
+    historiqueOperations.push("Retrait de 800 euros");
 
     // Enfin, recalculer les intérêts avec ce nouveau solde et affichez le résultat dans la console.
     solde = solde + (solde * tauxInteret);
     console.log("Intérêts annuels de 3% ajoutés. Nouveau solde : "+ solde +" euros");
+    historiqueOperations.push("Ajout des taux d'intéret de 3%");
+
+    //tableau
+    console.table(historiqueOperations);
 }
 else { console.log("Solde insuffisant pour effectuer ce retrait.")}
