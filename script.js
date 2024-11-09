@@ -59,6 +59,9 @@ if (solde >= nouveauRetrait){
     historiqueOperations.push("Ajout des taux d'intéret de 3%");
 
     //tableau
-    console.table(historiqueOperations);
+    // console.table(historiqueOperations);
+    for (i=0; i<historiqueOperations.length; i++){
+        console.log(historiqueOperations[i]);
+    }
 }
 else { console.log("Solde insuffisant pour effectuer ce retrait.")}
