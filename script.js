@@ -13,7 +13,7 @@ if (solde >= retrait){
 
     // Si le solde est suffisant, soustrayez le montant de retrait du solde, 
     //puis affichez : “Vous avez retiré 150 euros. Nouveau solde : X euros.""
-    solde = solde-150;
+    solde = solde-retrait;
     console.log("Vous avez retiré 150 euros. Nouveau solde : " + solde +" euros.")
 }
 
@@ -46,7 +46,7 @@ let nouveauRetrait = 800;
 if (solde >= nouveauRetrait){
     solde = solde - nouveauRetrait;
     console.log("Vous avez retiré 800 euros. Nouveau solde : " + solde +" euros.");
-    
+
     // Enfin, recalculer les intérêts avec ce nouveau solde et affichez le résultat dans la console.
     solde = solde + (solde * tauxInteret);
     console.log("Intérêts annuels de 3% ajoutés. Nouveau solde : "+ solde +" euros");
