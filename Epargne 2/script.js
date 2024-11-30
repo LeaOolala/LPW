@@ -1,44 +1,46 @@
+// const  tauxInteret = 0.03;
+// let solde = 1000;
+// let depot = 200;
+// let retrait = 150;
+// const historiqueOperations = [];
 
-const  tauxInteret = 0.03;
-let solde = 1000;
-let depot = 200;
-let retrait = 150;
-const historiqueOperations = [];
+// let depot= 200;
+// let retrait= 150; 
 
-solde = depot + solde;
-// console.log( "Vous avez déposé 200 euros. Nouveau solde : " + solde + " euros");
-historiqueOperations.push("Dépôt de 200 euros");
+class Epargne {
+    #solde ;
+    #tauxInteret;
+    constructor(initialAmount){
+    this.#tauxInteret = 0.03
+    this.#solde = initialAmount
 
-// Vérif solde pour retrait.
-if (solde >= retrait){
+    }
+    // get otherSolde(){
+    //     return this.#solde
+    // }
 
-    solde = solde-retrait;
-    // console.log("Vous avez retiré 150 euros. Nouveau solde : " + solde +" euros.")
-    historiqueOperations.push("Retrait de 150 euros");
+    set otherDepot(depot){
+        return this.#solde += depot;
+    }
+
+    set otherRetrait(retrait){
+        return this.#solde-=retrait;
+    }
+    // set otherInterets(#tauxInteret){
+    //     return this.#solde = this.#solde + (this.solde * #tauxInteret);
+    // }
 }
-else{console.log("Solde insuffisant pour effectuer ce retrait.")}
+const compteEpargne = new Epargne(1000)
+compteEpargne.otherDepot(200)
 
-solde = solde + (solde * tauxInteret);
-// console.log("Intérêts annuels de 3% ajoutés. Nouveau solde : " + solde + " euros");
-historiqueOperations.push("Ajout des taux d'intérêt de 3%");
+// console.log(epargne.#solde);
+// console.log(epargne.otherDepot);
+// console.log(epargne.otherRetrait);
+// console.log(epargne.otherInterets);
+// depot= 500;
+// console.log(epargne.otherDepot);
+// retrait = 800;
+// console.log(epargne.otherRetrait);
 
-let nouveauDepot = 500;
 
-solde = solde + nouveauDepot;
-// console.log("Vous avez déposé 500 euros. Nouveau solde : " + solde + " euros");
-historiqueOperations.push("Dépôt de 500 euros");
-
-let nouveauRetrait = 800;
-
-if (solde >= nouveauRetrait){
-    solde = solde - nouveauRetrait;
-    // console.log("Vous avez retiré 800 euros. Nouveau solde : " + solde +" euros.");
-    historiqueOperations.push("Retrait de 800 euros");
-
-    solde = solde + (solde * tauxInteret);
-    // console.log("Intérêts annuels de 3% ajoutés. Nouveau solde : "+ solde +" euros");
-    historiqueOperations.push("Ajout des taux d'intérêt de 3%");
-
-    console.table(historiqueOperations);
-}
-else { console.log("Solde insuffisant pour effectuer ce retrait.")}
+// console.log(epargne.depot);
